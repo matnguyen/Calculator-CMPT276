@@ -24,6 +24,7 @@ main {
     padding-left: 1%;
     padding-top: 1%;
     padding-bottom: 1%;
+    overflow: hidden;  
 }
 
 table{
@@ -47,6 +48,26 @@ td {
     border: 1px solid #bbb;
 }
 
-input {
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+input[type="number"] {
     width: 50%;
+    margin: 3px;
+    padding: 8px;
+}
+
+input[type="button"] {
+    border-radius: 5px;
+    padding: .25em 1em;
+    margin: 0.5em;
+    font-size: 1em;
+    font-family: "DINWebMedium",sans-serif;
+    color: #FFF;
+    min-width: 100px;
+    float: right;
+    background-color: #a6192e;
+    cursor: pointer;
 }
