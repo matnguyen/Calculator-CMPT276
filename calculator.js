@@ -1,6 +1,6 @@
 // This function dynamically updates the "Percent" field in the table
 // If an invalid calculation is performed, "N/A" is shown 
-function updatePercentage (cell) {
+function updatePercentage(cell) {
     var input_cell = (cell).closest('tr').cells[3];
     var numerator = input_cell.children[0].value
     var denominator = input_cell.children[1].value
@@ -17,4 +17,14 @@ function updatePercentage (cell) {
     else {
         percent_cell.innerHTML = percent.toFixed(2) + "%"
     }
+}
+
+// This function computes the mean of all grades
+function mean() {
+
+}
+
+// This function computes the weighted mean of all grades
+function weighted() {
+
 }
