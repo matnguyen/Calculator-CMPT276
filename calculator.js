@@ -20,8 +20,27 @@ function updatePercentage(cell) {
 }
 
 // This function computes the mean of all grades
-function mean() {
+function mean(table, result) {
+    var sum = 0
+    var numGrades = 0
+    for (var i = 1, row; row = table.rows[i]; i++) {
+        var cell = row.cells[3]
+        var numerator = cell.children[0].value
+        var denominator = cell.children[1].value
 
+        // Check if input fields are empty
+        if (numerator.length != 0 && denominator.length != 0) {
+            sum += (numerator / denominator)
+            numGrades++
+        }
+    }
+    // If no grades have been entered
+    if (numGrades == 0) {
+        result.innerHTML = ""
+    }
+    else {
+        result.innerHTML = "Mean of grades: " + (sum / numGrades).toFixed(2)
+    }
 }
 
 // This function computes the weighted mean of all grades
