@@ -75,3 +75,33 @@ function weighted() {
         result.innerHTML = "Weighted grades: " + (total / totalWeights).toFixed(3)
     }
 }
+
+// This function adds rows (activities) to the table
+function add_row() {
+    var table = document.getElementById("calculator_table")
+    var newRow = table.insertRow(-1)
+    var name = newRow.insertCell(0)
+    var shortName = newRow.insertCell(1)
+    var weight = newRow.insertCell(2)
+    var grade = newRow.insertCell(3)
+    var percent = newRow.insertCell(4)
+    percent.setAttribute("class", "percent")
+    var rowCount = table.rows.length
+
+    name.innerHTML = "Activity " + (rowCount - 1)
+    shortName.innerHTML = "A" + (rowCount - 1)
+    
+    var weight_inputBox = document.createElement("input")
+    weight_inputBox.setAttribute("type", "number")
+    weight.appendChild(weight_inputBox)
+
+    var numerator_inputBox = document.createElement("input")
+    var denominator_inputBox = document.createElement("input")
+    numerator_inputBox.setAttribute("type", "number")
+    numerator_inputBox.setAttribute("onkeyup", "updatePercentage(this)")
+    denominator_inputBox.setAttribute("type", "number")
+    denominator_inputBox.setAttribute("onkeyup", "updatePercentage(this)")
+    grade.appendChild(numerator_inputBox)
+    grade.appendChild(document.createTextNode("/"))
+    grade.appendChild(denominator_inputBox)
+}
