@@ -90,4 +90,5 @@ input[type="button"] {
 #final_exam_grade {
     position: relative;
     top: -11px;
+    margin-left: 150px;
 }
