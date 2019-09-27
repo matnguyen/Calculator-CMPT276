@@ -147,6 +147,7 @@ function additionalGrade() {
     div.appendChild(document.createTextNode("weighted final to achieve a final grade of "))
     div.appendChild(gradeInputBox)
     div.appendChild(document.createTextNode("%"))
+    div.appendChild(document.createElement("p"))
 
     var calculateButton = document.createElement("input")
     calculateButton.setAttribute("type", "button")
