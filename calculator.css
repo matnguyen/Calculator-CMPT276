@@ -23,7 +23,7 @@ main {
     width: 70%;
     padding-left: 1%;
     padding-top: 1%;
-    padding-bottom: 1%;
+
     overflow: hidden;  
 }
 
@@ -70,4 +70,19 @@ input[type="button"] {
     float: right;
     background-color: #a6192e;
     cursor: pointer;
+}
+
+#additional_grade_button {
+    border-radius: 5px;
+    padding: .25em 1em;
+    font-size: 1em;
+    font-family: "DINWebMedium",sans-serif;
+    color: #FFF;
+    min-width: 100px;
+    float: left;
+    background-color: #a6192e;
+    cursor: pointer;
+    position: relative;
+    top: -20px;
+    right: 10px;
 }

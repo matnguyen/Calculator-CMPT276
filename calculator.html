@@ -27,15 +27,15 @@
                         <tr>
                             <td>Activity 1</td>
                             <td>A1</td>
-                            <td><input type="number" /></td>
-                            <td><input onkeyup="updatePercentage(this)" type="number" />/
+                            <td><input type="number"/></td>
+                            <td><input onkeyup="updatePercentage(this)" type="number"/>/
                                 <input onkeyup="updatePercentage(this)" type="number" /></td>
                             <td class="percent"></td>
                         </tr>
                         <tr>
                             <td>Activity 2</td>
                             <td>A2</td>
-                            <td><input type="number" /></td>
+                            <td><input type="number"/></td>
                             <td><input onkeyup="updatePercentage(this)" type="number" />/
                                 <input onkeyup="updatePercentage(this)" type="number" /></td>
                             <td class="percent"></td>
@@ -51,17 +51,18 @@
                         <tr>
                             <td>Activity 4</td>
                             <td>A4</td>
-                            <td><input type="number" /></td>
+                            <td><input type="number"/></td>
                             <td><input onkeyup="updatePercentage(this)" type="number" />/
                                 <input onkeyup="updatePercentage(this)" type="number" /></td>
                             <td class="percent"></td>
                         </tr>
                     </table>
-                    <input id="weighted" type="button" value="ADD ACTIVITY" onclick="add_row()"/>
+                    <input type="button" value="ADD ACTIVITY" onclick="addRow()"/>
                     <h2 style="color: #a6192e">Result</h2>
                     <h3 id="result"></h3>
-                    <input id="weighted" type="button" value="WEIGHTED" onclick="weighted()"/>
-                    <input id="mean" type="button" value="MEAN" onclick="mean()"/>
+                    <input type="button" value="WEIGHTED" onclick="weighted()"/>
+                    <input type="button" value="MEAN" onclick="mean()"/>
+                    <p>&nbsp</p>
                 </div>
             </div>
         </main>

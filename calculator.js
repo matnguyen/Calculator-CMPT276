@@ -73,11 +73,14 @@ function weighted() {
     }
     else {
         result.innerHTML = "Weighted grades: " + (total / totalWeights).toFixed(3)
+        if (!document.getElementById("final_grade")) {
+            additionalGrade()
+        }
     }
 }
 
 // This function adds rows (activities) to the table
-function add_row() {
+function addRow() {
     var table = document.getElementById("calculator_table")
     var newRow = table.insertRow(-1)
     var name = newRow.insertCell(0)
@@ -105,3 +108,28 @@ function add_row() {
     grade.appendChild(document.createTextNode("/"))
     grade.appendChild(denominator_inputBox)
 }
+
+// This function adds the ability to calculate additional grade needed to reach x%
+function additionalGrade() {
+    var div = document.getElementById("calculator_content")
+    var inputBox = document.createElement("input")
+    inputBox.setAttribute("type", "number")
+    inputBox.setAttribute("min", "1")
+    inputBox.setAttribute("max", "100")
+    inputBox.setAttribute("id", "final_grade")
+    inputBox.setAttribute("style", "width: 23px; height: 5px;")
+
+    div.appendChild(document.createTextNode("Minimum additional grade to achieve "))
+    div.appendChild(inputBox)
+    div.appendChild(document.createTextNode("%"))
+    div.appendChild(document.createElement("p"))
+
+    var calculateButton = document.createElement("input")
+    calculateButton.setAttribute("type", "button")
+    calculateButton.setAttribute("value", "CALCULATE")
+    calculateButton.setAttribute("id", "additional_grade_button")
+    // calculateButton.setAttribute("onclick", "calculateAdditionalGrade")
+    div.appendChild(calculateButton)
+}
+
+// This function calculates the additional grade needed
