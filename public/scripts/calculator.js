@@ -29,7 +29,11 @@ function mean() {
         var inputs = row.cells[3]
         var numerator = inputs.children[0].value
         var denominator = inputs.children[1].value
-
+        // Grades cannot be negative
+        if (numerator < 0 || denominator < 0) {
+            window.alert("Grades should only be positive")
+            return
+        }
         // Check if input fields are empty
         if (numerator.length != 0 && denominator.length != 0) {
             sum += (numerator / denominator)
@@ -59,6 +63,16 @@ function weighted() {
 
         // Check if weight field is empty
         if (weight.length != 0) {
+            // Weights cannot be negative
+            if (weight < 0) {
+                window.alert("Weights should only be positive")
+                return
+            }
+            // Grades cannot be negative
+            if (numerator < 0 || denominator < 0) {
+                window.alert("Grades should only be positive")
+                return
+            }
             // Check if input fields are empty
             if (numerator.length != 0 && denominator.length != 0) {
                 total += ((numerator / denominator) * weight)
@@ -149,6 +163,12 @@ function additionalGradeCalc() {
     var finalGrade = document.getElementById("final_grade").value / 100
     var finalWeight = document.getElementById("final_exam_weight").value / 100
     var currentGrade = weighted()
+
+    // Final grade and weight should be positive
+    if (finalWeight < 0 || finalGrade < 0) {
+        window.alert("The final weight and grade should be positive")
+        return
+    }
 
     var examGrade = (finalGrade - (1 - finalWeight) * currentGrade) / finalWeight
     if (!document.getElementById("final_exam_grade")) {
